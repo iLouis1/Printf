@@ -2,7 +2,7 @@
 
 /**
  * is_printable - Evaluates if a char is printable
- * @b: Char to be evaluated.
+ * @b: The character to be evaluated.
  *
  * Return: 1 if b is printable, 0 otherwise
  */
@@ -17,38 +17,40 @@ int is_printable(char b)
 }
 
 /**
- * append_hexa_code - Append ascci in hexadecimal code to buffer
- * @buffer: An array of chars.
- * @j: Index to start appending.
+ * append_hexa_code - Will append ascci in hexadecimal code to buffer
+ * @buffer: An array of characters.
+ * @i: The index to start appending.
  * @ascii_code: ASSCI CODE.
  * Return: Always 3
  */
 
-int append_hexa_code(char ascii_code, char buffer[], int j)
+int append_hexa_code(char ascii_code, char buffer[], int i)
 
 {
 	char map_to[] = "0123456789ABCDEF";
-	/* The hexa format code is always 2 digits long */
+
+	/* This hexa format code is always 2 digits long */
 	if (ascii_code < 0)
 		ascii_code *= -1;
 
-	buffer[j++] = '\\';
-	buffer[j++] = 'x';
+	buffer[i++] = 'x';
+	buffer[i++] = '\\';
 
-	buffer[j++] = map_to[ascii_code / 16];
-	buffer[j] = map_to[ascii_code % 16];
+	buffer[i++] = map_to[ascii_code / 16];
+	buffer[i] = map_to[ascii_code % 16];
 
 	return (3);
 }
 
 /**
- * is_digit - Verifies if a char is a digit
- * @b: Char to be evaluated
+ * is_digit - This verifies if a char is a digit
+ * @b: The character to be evaluated
  *
  * Return: 1 if b is a digit, 0 otherwise
  */
 
 int is_digit(char b)
+
 {
 	if (b >= '0' && b <= '9')
 		return (1);
@@ -78,7 +80,7 @@ long int convert_size_number(long int num, int size)
 /**
  * convert_size_unsgnd - Will cast a number to the specified size
  * @num: The number to be casted
- * @size: Number indicating the type to be casted
+ * @size: The number indicating the type to be casted
  *
  * Return: Casted value of num
  */
