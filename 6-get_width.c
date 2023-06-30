@@ -4,7 +4,7 @@
  * get_width - This calculates the width for printing
  * @format: This are the formatted string in which to print the arguments.
  * @i: The list of arguments to be printed.
- * @list: list of arguments.
+ * @list: Arguments listed
  *
  * Return: width.
  */
@@ -12,8 +12,8 @@
 int get_width(const char *format, int *i, va_list list)
 
 {
-	int curr_i;
 	int width = 0;
+	int curr_i;
 
 	for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
 	{
